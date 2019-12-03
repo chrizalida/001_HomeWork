@@ -27,7 +27,13 @@
             var opt=cb.options[ind];
             var selectopt="l"+opt.value;
       }
-      return selectopt;
+      if (selectopt!="l"){
+       return selectopt; 
+      } else {
+       alert('Select number of lists from combo!');
+       var n= "";
+       return n;
+     }
     }
 
     function DeleteElem(param) {
@@ -36,6 +42,9 @@
       ClearColor("l3");
 
       var selopt=SetComboValue(param);
+      if (selopt=="") {
+       return;
+      }
       var selnode = document.getElementById(selopt);  
       var elemli = document.getElementById(selopt).getElementsByTagName("li");  
         if (elemli.length>1) {
@@ -52,6 +61,9 @@
     ClearColor("l3");
 
     var selopt=SetComboValue(param);
+    if (selopt=="") {
+      return;
+    }
     var selnode = document.getElementById(selopt);   
     switch(param){
       case 4:
@@ -75,6 +87,9 @@
       ClearColor("l3");
 
       var selopt=SetComboValue(param);
+      if (selopt==="") {
+       return;
+      }
       switch(param){
         case 1:
           var selnode = document.getElementById(selopt).getElementsByTagName("li")[0];  
@@ -118,6 +133,9 @@
    function NextAPrevElem(param) {
            
           var selopt=SetComboValue(param);
+          if (selopt==="") {
+           return;
+          }
           var selnode = document.getElementById(selopt);  
           var elemli = document.getElementById(selopt).getElementsByTagName("li");
           switch(param){
