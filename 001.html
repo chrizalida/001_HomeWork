@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Интересные списки</title>
+<link href="index.css" rel="stylesheet">
+<script src="index.js"></script>
+</head>
+<body>
+    <div>Это список с самого начала:</div>
+      <ol class="list1" id="l1">
+       <li class="list1">первый!</li>
+       <li class="list1">второй!</li>
+       <li class="list1">третий!</li>
+     </ol>
+
+    <div>А это не совсем:</div>
+      <ol class="list1" id="l2" start="8" >
+       <li class="list1">первый?</li>
+       <li class="list1">второй?</li>
+       <li class="list1">третий?</li>
+     </ol> 
+
+    <div>А это и подавно:</div>
+      <ul class="list2" id="l3">
+       <li class="list2">может это первый?</li>
+       <li class="list2">а это второй?</li>
+       <li class="list2">третий???</li>
+     </ul> 
+   
+    <br><button onclick="FirstALastElem(1)">Выбрать первый элемент списка №</button>
+    <select name="CB1" id="combo1">
+    </select>  
+    </br>
+    <br><button onclick="FirstALastElem(2)">Выбрать последний элемент списка  №</button>
+    <select name="CB2" id="combo2">
+    </select>  
+    </br>
+    <br><button onclick="NextAPrevElem(6)">Выбрать следующий элемент списка  №</button>
+    <select name="CB3" id="combo3">
+    </select>  
+    </br>
+    <br><button onclick="NextAPrevElem(7)">Выбрать предыдущий элемент списка  №</button>
+    <select name="CB4" id="combo4">
+    </select>  
+    </br>
+    <br><button onclick="InsertElem(3)">Добавить элемент в список  №</button>
+    <select name="CB5" id="combo5">
+    </select>  
+    </br>
+    <br><button onclick="DeleteElem(5)">Удалить элемент из списка  №</button>
+    <select name="CB6" id="combo6">
+    </select>  
+    </br>
+    <br><button onclick="InsertElem(4)">Добавить элемент в начало списка  №</button>
+    <select name="CB7" id="combo7">
+    </select>  
+    </br>
+
+  <script type="text/javascript">
+    var arr=["","1","2","3"];
+    var sel=document.getElementsByTagName("select");
+      for (var i =0; i<sel.length; i++) {
+        for (var y =0; y<arr.length; y++) {
+             var opts=document.createElement("option");
+              opts.value=arr[y];
+              opts.text=arr[y];  
+              sel[i].appendChild(opts);            
+      }
+        }
+  </script>
+</body>
+</html>
